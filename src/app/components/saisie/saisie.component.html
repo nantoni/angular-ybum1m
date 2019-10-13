@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" id="compteForm" class="col s8 offset-s2">
+                <h2>Saisie compte client</h2>
+                <!-- Login -->
+                <div class="input-field col s12">
+                    <label>Login</label>
+                    <input formControlName="login" autofocus type="text" name="login" id="login" />
+                </div>
+                <!-- Password -->
+                <div class="input-field col s6">
+                    <label>Mot de passe</label>
+                    <input type="password" name="pass" id="pass" />
+                </div>
+                <div class="input-field col s6">
+                    <label>Confirmation</label>
+                    <input type="password" name="passconfirm" id="passconfirm" />
+                </div>
+                <!-- Civilite -->
+                <div class="input-field col s12">
+                    <select class="browser-default" formControlName="groupCivilite">
+                        <option value="" disabled selected>Civilite</option>
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                        <option value="autre">Non-binaire</option>
+                    </select>
+                </div>
+                <!-- Nom -->
+                <div class="input-field col s6">
+                    <label>Nom</label>
+                    <input formControlName="nom" type="text" name="nom" id="nom" />
+                </div>
+                <!-- Prenom -->
+                <div class="input-field col s6">
+                    <label>Prenom</label>
+                    <input formControlName="prenom" type="text" name="prenom" id="prenom" />
+                </div>
+                <!-- Pays -->
+                <div class="input-field col s12">
+                    <select class="browser-default" formControlName="pays">
+                        <option value="" disabled selected>Pays</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Croatia (Hrvatska)">Croatia (Hrvatska)</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="France">France</option>
+                        <option value="Gibraltar">Gibraltar</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Macedonia">Macedonia</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Romania">Romania</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Faroe Islands">Faroe Islands</option>
+                        <option value="Finland">Finland</option>
+                        <option value="Greenland">Greenland</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Svalbard and Jan Mayen Islands">Svalbard and Jan Mayen Islands</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Turkey">Turkey</option>
+                    </select>
+                </div>
+                <!-- Email -->
+                <div class="input-field col s12">
+                    <input formControlName="email" id="email" type="email" class="validate" pattern="^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$">
+                    <label for="email">Email</label>
+                    <span *ngIf="form.controls['email'].errors?.pattern">Cet email n'est pas valide</span>
+                </div>
+                <!-- Telephone -->
+                <div class="input-field col s12">
+                    <label>Telephone</label>
+                    <input formControlName="tel" type="tel" name="tel" id="tel" pattern="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"/>
+                    <span *ngIf="form.controls['tel'].errors?.pattern" id="errorTel">Ce numéro n'est pas valide</span>
+                </div>
+                <!-- Adresse -->
+                <div class="input-field col s12">
+                    <label>Adresse</label>
+                    <input formControlName="adresse" type="text" name="adresse" id="adresse" />
+                </div>
+                <!-- Code Postal  -->
+                <div class="input-field col s6">
+                    <label>Code Postal</label>
+                    <input formControlName="cp" type="text" name="cp" id="cp" pattern="^[0-9]{5}$"/>
+                    <span *ngIf="form.controls['cp'].errors?.pattern">Ce code postal n'est pas valide</span>
+                </div>
+                <!-- Ville  -->
+                <div class="input-field col s6">
+                    <label>Ville</label>
+                    <input formControlName="ville" type="text" name="ville" id="ville" />
+                </div>
+                <!-- Submit -->
+                <div *ngIf='form.status == "VALID" && form.dirty' class="input_field col s12">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Envoyer</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
