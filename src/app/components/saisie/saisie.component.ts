@@ -8,6 +8,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class SaisieComponent implements OnInit {
 
+    login : string = "";
+
+  checkLogin () : boolean {
+    return (/^[0-9]{1,10}$/.test (this.login));    
+  }
+
   @Input() form: FormGroup;
   @Output() formValidated: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 

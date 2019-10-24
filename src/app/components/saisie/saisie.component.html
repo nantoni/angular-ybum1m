@@ -6,7 +6,7 @@
                 <!-- Login -->
                 <div class="input-field col s12">
                     <label>Login</label>
-                    <input formControlName="login" autofocus type="text" name="login" id="login" />
+                    <input [appError]="checkLogin()" [(ngModel)]="login" formControlName="login" autofocus type="text" name="login" id="login" />
                 </div>
                 <!-- Password -->
                 <div class="input-field col s6">
