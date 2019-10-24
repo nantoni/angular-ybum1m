@@ -7,7 +7,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TetiereComponent } from './components/tetiere/tetiere.component';
 import { SaisieComponent } from './components/saisie/saisie.component';
 import { RecapComponent } from './components/recap/recap.component';
-import { ErrorDirective } from './error.directive.ts';
+import { ErrorDirective } from './error.directive';
+import { PhonePipe } from './phone.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ErrorDirective } from './error.directive.ts';
     TetiereComponent,
     SaisieComponent,
     RecapComponent,
-    ErrorDirective
+    ErrorDirective,
+    PhonePipe
   ],
   imports: [
     BrowserModule, 
